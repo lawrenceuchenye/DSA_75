@@ -1,14 +1,19 @@
 
 def insertion_sort(arr):
-    i, j, temp = None, None, None
-    ival, jval = None, None
-    for x in range(len(arr)-1):
-        i, j, ival, jval = x, x+1, arr[x], arr[x+1]
+    # for loop thoru array from 1
+    for x in range(1, len(arr)):
+        # store indx val
+        # store predecesdor indx
         temp = arr[x]
-        while ((jval < temp) and (j >= 0)):
+        j = x-1
+        # constraints
+        # if j >= 0
+        # temp isboess than current j indx
+        while ((j >= 0) and (temp < arr[j])):
+            # push current j_val to the back
+            # decrease j
             arr[j+1] = arr[j]
             j -= 1
-            jval = arr[j]
         arr[j+1] = temp
     print(arr)
 
